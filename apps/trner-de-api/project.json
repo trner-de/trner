@@ -19,6 +19,7 @@
           "extractLicenses": true,
           "inspect": false,
           "generatePackageJson": true,
+          "outputFileName": "server.js",
           "fileReplacements": [
             {
               "replace": "apps/trner-de-api/src/environments/environment.ts",
