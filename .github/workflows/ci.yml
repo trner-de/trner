@@ -41,6 +41,7 @@ jobs:
 
       - name: npm install, build, and test
         run: |
+          npm install
           npx nx run trner-de:build:production
 
       - name: Upload artifact for deployment job
