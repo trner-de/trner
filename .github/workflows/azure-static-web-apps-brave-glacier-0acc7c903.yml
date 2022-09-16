@@ -30,7 +30,7 @@ jobs:
           # For more information regarding Static Web App workflow configurations, please visit: https://aka.ms/swaworkflowconfig
           app_location: '/' # App source code path
           skip_api_build: true # true to skip building API app source code
-          output_location: '/workspace/dist/apps/trner-de' # Built app content directory - optional
+          output_location: 'dist/apps/trner-de' # Built app content directory - optional
           ###### End of Repository/Build Configurations ######
 
   close_pull_request_job:
