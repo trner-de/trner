@@ -10,7 +10,8 @@
         "outputPath": "dist/apps/trner-de-api",
         "main": "apps/trner-de-api/src/main.ts",
         "tsConfig": "apps/trner-de-api/tsconfig.app.json",
-        "assets": ["apps/trner-de-api/src/assets"]
+        "assets": ["apps/trner-de-api/src/assets"],
+        "generatePackageJson": true
       },
       "configurations": {
         "production": {
