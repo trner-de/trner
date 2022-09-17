@@ -4,6 +4,7 @@
   "projects": {
     "trner-de": "apps/trner-de",
     "trner-de-api": "apps/trner-de-api",
-    "trner-de-e2e": "apps/trner-de-e2e"
+    "trner-de-e2e": "apps/trner-de-e2e",
+    "ui": "libs/ui"
   }
 }
