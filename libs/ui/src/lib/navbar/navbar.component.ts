@@ -1,12 +1,30 @@
 import { Component, OnInit } from '@angular/core';
+import { NavMenuModel } from '../models/MenuModel';
 
 @Component({
-  selector: 'trner-navbar',
-  templateUrl: './navbar.component.html',
-  styleUrls: ['./navbar.component.scss'],
+	selector: 'trner-navbar',
+	templateUrl: './navbar.component.html',
+	styleUrls: ['./navbar.component.scss'],
 })
 export class NavbarComponent implements OnInit {
-  constructor() {}
+	menuItems: NavMenuModel[] = [
+		{
+			title: 'Home',
+			route: '/',
+		},
+		{
+			title: 'Über uns',
+			route: '/about',
+		},
+		{
+			title: 'Kontakt',
+			route: '/kontakt',
+		},
+	];
 
-  ngOnInit(): void {}
+
+
+	constructor() { }
+
+	ngOnInit(): void { }
 }

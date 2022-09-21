@@ -5,6 +5,7 @@
     "trner-de": "apps/trner-de",
     "trner-de-api": "apps/trner-de-api",
     "trner-de-e2e": "apps/trner-de-e2e",
-    "ui": "libs/ui"
+    "ui": "libs/ui",
+    "ui-e2e": "apps/ui-e2e"
   }
 }

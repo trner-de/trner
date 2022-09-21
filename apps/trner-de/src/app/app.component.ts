@@ -1,6 +1,4 @@
-import { HttpClient } from '@angular/common/http';
 import { Component } from '@angular/core';
-import { environment } from '../environments/environment';
 
 @Component({
   selector: 'trner-root',
@@ -8,9 +6,7 @@ import { environment } from '../environments/environment';
   styleUrls: ['./app.component.scss'],
 })
 export class AppComponent {
-  fromapi = this.http.get(environment.backendUrl + '/api');
-
-  constructor(private http: HttpClient) {}
+  constructor() {}
 
   title = 'trner-de';
 }
