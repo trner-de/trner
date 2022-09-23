@@ -1,5 +1,10 @@
-import { Component, OnInit } from '@angular/core';
+import { AfterViewInit, Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { NavMenuModel } from '../models/MenuModel';
+import { gsap } from 'gsap';
+import ScrollTrigger from "gsap/ScrollTrigger";
+import { repeat } from 'rxjs';
+
+gsap.registerPlugin(ScrollTrigger)
 
 @Component({
 	selector: 'trner-navbar',
@@ -22,9 +27,27 @@ export class NavbarComponent implements OnInit {
 		},
 	];
 
+	menu!: HTMLCollection;
+	logo!: HTMLElement;
+	logoText!: HTMLElement;
+
+	constructor(protected element: ElementRef) { }
+
+	ngOnInit(): void {
+		this.menu = this.element.nativeElement.querySelector('.menu').children;
+		this.logo = this.element.nativeElement.querySelector('.logo');
+		this.logoText = this.element.nativeElement.querySelector('.logo-text');
+
+		this.timeline();
+	}
+
+	timeline() {
 
 
-	constructor() { }
-
-	ngOnInit(): void { }
+		console.log(this.logo);
+		const tl = gsap.timeline()
+			.from(this.logo, { opacity: 0, scale: 0, ease: "back", duration: 0.8 })
+			.from(this.logoText, { xPercent: -100, duration: 0.4 })
+			.from(this.menu, { duration: 0.8, yPercent: -150, ease: "back", stagger: 0.3 })
+	}
 }
