@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
-import { AppComponent } from './app.component';
+import { AppComponent, } from './app.component';
 import { RouterModule } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
 
@@ -32,6 +32,10 @@ import { UiModule } from '@trner/ui';
 					path: 'imprint',
 					loadChildren: () =>
 						import('@trner/imprint').then((m) => m.ImprintModule),
+				},
+				{
+					path: 'home',
+					loadChildren: () => import('@trner/home').then((m) => m.HomeModule),
 				},
 			],
 			{ initialNavigation: 'enabledBlocking' }

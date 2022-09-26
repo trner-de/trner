@@ -15,6 +15,7 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
+      "@trner/home": ["libs/home/src/index.ts"],
       "@trner/how": ["libs/how/src/index.ts"],
       "@trner/imprint": ["libs/imprint/src/index.ts"],
       "@trner/privacy": ["libs/privacy/src/index.ts"],

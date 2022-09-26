@@ -1,53 +1,71 @@
 import { AfterViewInit, Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { NavMenuModel } from '../models/MenuModel';
-import { gsap } from 'gsap';
-import ScrollTrigger from "gsap/ScrollTrigger";
+// import { gsap } from 'gsap';
+// import ScrollTrigger from "gsap/ScrollTrigger";
 import { repeat } from 'rxjs';
 
-gsap.registerPlugin(ScrollTrigger)
+// gsap.registerPlugin(ScrollTrigger)
 
 @Component({
 	selector: 'trner-navbar',
 	templateUrl: './navbar.component.html',
 	styleUrls: ['./navbar.component.scss'],
 })
-export class NavbarComponent implements OnInit {
+export class NavbarComponent {
+	isMenuExpanded = false;
 	menuItems: NavMenuModel[] = [
 		{
 			title: 'Home',
-			route: '/',
+			route: 'home',
 		},
 		{
-			title: 'Über uns',
-			route: '/about',
+			title: 'How',
+			route: 'how',
 		},
 		{
-			title: 'Kontakt',
-			route: '/kontakt',
+			title: 'What',
+			route: 'what',
 		},
+		{
+			title: 'Privacy',
+			route: 'privacy',
+		},
+		{
+			title: 'Imprint',
+			route: 'imprint',
+		}
 	];
 
-	menu!: HTMLCollection;
-	logo!: HTMLElement;
-	logoText!: HTMLElement;
 
-	constructor(protected element: ElementRef) { }
+	// menu!: HTMLCollection;
+	// logo!: HTMLElement;
+	// logoText!: HTMLElement;
 
-	ngOnInit(): void {
-		this.menu = this.element.nativeElement.querySelector('.menu').children;
-		this.logo = this.element.nativeElement.querySelector('.logo');
-		this.logoText = this.element.nativeElement.querySelector('.logo-text');
+	constructor(protected element: ElementRef) {
 
-		this.timeline();
+
 	}
 
-	timeline() {
 
-
-		console.log(this.logo);
-		const tl = gsap.timeline()
-			.from(this.logo, { opacity: 0, scale: 0, ease: "back", duration: 0.8 })
-			.from(this.logoText, { xPercent: -100, duration: 0.4 })
-			.from(this.menu, { duration: 0.8, yPercent: -150, ease: "back", stagger: 0.3 })
+	menuToggle() {
+		console.log('menuToggle');
+		this.isMenuExpanded = !this.isMenuExpanded;
 	}
+
 }
+	// this.menu = this.element.nativeElement.querySelector('.menu').children;
+	// this.logo = this.element.nativeElement.querySelector('.logo');
+	// this.logoText = this.element.nativeElement.querySelector('.logo-text');
+
+	// this.timeline();
+//}
+
+	// timeline() {
+
+
+	// 	console.log(this.logo);
+	// 	const tl = gsap.timeline()
+	// 		.from(this.logo, { opacity: 0, scale: 0, ease: "back", duration: 0.8 })
+	// 		.from(this.logoText, { xPercent: -100, duration: 0.4 })
+	// 		.from(this.menu, { duration: 0.8, yPercent: -150, ease: "back", stagger: 0.3 })
+	// }
