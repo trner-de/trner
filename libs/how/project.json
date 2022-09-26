@@ -1,0 +1,22 @@
+{
+  "projectType": "library",
+  "sourceRoot": "libs/how/src",
+  "prefix": "trner",
+  "targets": {
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/libs/how"],
+      "options": {
+        "jestConfig": "libs/how/jest.config.ts",
+        "passWithNoTests": true
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "options": {
+        "lintFilePatterns": ["libs/how/**/*.ts", "libs/how/**/*.html"]
+      }
+    }
+  },
+  "tags": []
+}

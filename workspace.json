@@ -2,10 +2,14 @@
   "$schema": "./node_modules/nx/schemas/workspace-schema.json",
   "version": 2,
   "projects": {
+    "how": "libs/how",
+    "imprint": "libs/imprint",
+    "privacy": "libs/privacy",
     "trner-de": "apps/trner-de",
     "trner-de-api": "apps/trner-de-api",
     "trner-de-e2e": "apps/trner-de-e2e",
     "ui": "libs/ui",
-    "ui-e2e": "apps/ui-e2e"
+    "ui-e2e": "apps/ui-e2e",
+    "what": "libs/what"
   }
 }

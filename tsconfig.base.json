@@ -15,7 +15,11 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@trner/ui": ["libs/ui/src/index.ts"]
+      "@trner/how": ["libs/how/src/index.ts"],
+      "@trner/imprint": ["libs/imprint/src/index.ts"],
+      "@trner/privacy": ["libs/privacy/src/index.ts"],
+      "@trner/ui": ["libs/ui/src/index.ts"],
+      "@trner/what": ["libs/what/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]

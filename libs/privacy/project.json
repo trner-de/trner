@@ -1,0 +1,22 @@
+{
+  "projectType": "library",
+  "sourceRoot": "libs/privacy/src",
+  "prefix": "trner",
+  "targets": {
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/libs/privacy"],
+      "options": {
+        "jestConfig": "libs/privacy/jest.config.ts",
+        "passWithNoTests": true
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "options": {
+        "lintFilePatterns": ["libs/privacy/**/*.ts", "libs/privacy/**/*.html"]
+      }
+    }
+  },
+  "tags": []
+}
