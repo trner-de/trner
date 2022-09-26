@@ -47,9 +47,8 @@ export class NavbarComponent {
 	}
 
 
-	menuToggle() {
-		console.log('menuToggle');
-		this.isMenuExpanded = !this.isMenuExpanded;
+	menuToggle(state: boolean) {
+		this.isMenuExpanded = state
 	}
 
 }

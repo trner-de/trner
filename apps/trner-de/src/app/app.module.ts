@@ -38,7 +38,6 @@ import { UiModule } from '@trner/ui';
 					loadChildren: () => import('@trner/home').then((m) => m.HomeModule),
 				},
 			],
-			{ initialNavigation: 'enabledBlocking' }
 		),
 	],
 	providers: [],

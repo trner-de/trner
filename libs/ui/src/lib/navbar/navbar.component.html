@@ -2,28 +2,25 @@
   <div class="flex flex-wrap flex-row p-4">
     <!-- logo -->
     <div class="grow">
-      <a routerLink="/" class="flex items-start">
-        <img
-          src="assets/Logo.png"
-          class="mr-3 h-6 sm:h-9 logo"
-          alt="Trner Logo"
-        />
-        <span
-          class="self-center text-xl font-semibold whitespace-nowrap dark:text-white"
-          >Digital Solutions</span
-        >
-      </a>
+      <trner-logo></trner-logo>
     </div>
     <!-- menu -->
     <!-- hamburger -->
-    <trner-nav-hamburger (toggleMenuEvent)="menuToggle()"></trner-nav-hamburger>
+    <trner-nav-hamburger
+      [isMenuExpanded]="isMenuExpanded"
+      (toggleMenuEvent)="menuToggle($event)"
+    ></trner-nav-hamburger>
 
     <!-- links -->
-    <div class="w-full lg:block lg:w-auto" *ngIf="isMenuExpanded">
+    <div
+      class="w-full lg:block lg:w-auto"
+      [class.hidden]="isMenuExpanded === false"
+    >
       <ul
         class="flex flex-col p-4 mt-4 bg-gray-50 rounded-lg border border-gray-100 lg:flex-row lg:space-x-8 lg:mt-0 lg:text-sm lg:font-medium lg:border-0 lg:bg-white dark:bg-gray-800 lg:dark:bg-gray-900 dark:border-gray-700"
       >
         <trner-nav-mennu-list-item
+          (click)="isMenuExpanded = false"
           *ngFor="let navMenuItem of menuItems"
           [navMenuModel]="navMenuItem"
         ></trner-nav-mennu-list-item>

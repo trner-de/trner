@@ -1,4 +1,4 @@
-import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 
 @Component({
 	selector: 'trner-nav-hamburger',
@@ -6,10 +6,12 @@ import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 	styleUrls: ['./nav-hamburger.component.scss'],
 })
 export class NavHamburgerComponent {
-	@Output() toggleMenuEvent = new EventEmitter();
+	@Input() isMenuExpanded = false;
+	@Output() toggleMenuEvent = new EventEmitter<boolean>();
 
 
 	toggleMenu() {
-		this.toggleMenuEvent.emit();
+		this.isMenuExpanded = !this.isMenuExpanded;
+		this.toggleMenuEvent.emit(this.isMenuExpanded);
 	}
 }
