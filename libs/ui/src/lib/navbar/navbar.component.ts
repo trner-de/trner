@@ -15,23 +15,23 @@ export class NavbarComponent {
 	isMenuExpanded = false;
 	menuItems: NavMenuModel[] = [
 		{
-			title: 'Home',
+			title: 'Start',
 			route: 'home',
 		},
 		{
-			title: 'How',
-			route: 'how',
-		},
-		{
-			title: 'What',
+			title: 'Was machen wir',
 			route: 'what',
 		},
 		{
-			title: 'Privacy',
+			title: 'Wie machen wir das',
+			route: 'how',
+		},
+		{
+			title: 'Datenschtuz',
 			route: 'privacy',
 		},
 		{
-			title: 'Imprint',
+			title: 'Impressum',
 			route: 'imprint',
 		}
 	];
