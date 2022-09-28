@@ -37,6 +37,11 @@ import { UiModule } from '@trner/ui';
 					path: 'home',
 					loadChildren: () => import('@trner/home').then((m) => m.HomeModule),
 				},
+				{
+					path: '',
+					redirectTo: 'home',
+					pathMatch: 'full',
+				},
 			],
 		),
 	],

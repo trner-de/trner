@@ -7,14 +7,9 @@ import { AfterViewInit, Component, Inject, OnInit } from '@angular/core';
 	templateUrl: './app.component.html',
 	styleUrls: ['./app.component.scss'],
 })
-export class AppComponent implements OnInit {
+export class AppComponent {
 	title = 'trner-de';
 
-	constructor(@Inject(DOCUMENT) private document: Document) { }
 
-	ngOnInit(): void {
-		console.log();
-		this.document.documentElement.classList.add('dark')
-	}
 }
 

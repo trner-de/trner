@@ -7,7 +7,22 @@ module.exports = {
     ...createGlobPatternsForDependencies(__dirname),
   ],
   theme: {
-    extend: {},
+    extend: {
+      animation: {
+        fadeIn: 'fadeOut 5s ease-in-out',
+        fadeOut: 'fadeIn 5s ease-in-out',
+      },
+      keyframes: (theme) => ({
+        fadeOut: {
+          '0%': { backgroundColor: theme('colors.red.300') },
+          '100%': { backgroundColor: theme('colors.blue.400') },
+        },
+        fadeIn: {
+          '0%': { backgroundColor: theme('colors.blue.400') },
+          '100%': { backgroundColor: theme('colors.red.300') },
+        },
+      }),
+    },
   },
   plugins: [],
   darkMode: 'class',
