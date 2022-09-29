@@ -19,7 +19,7 @@ export class NewComponent implements OnInit, AfterViewInit {
 					if (entry.isIntersecting) {
 						// run your animation code here
 						console.log('new in view');
-						this.themeSwitcher.toggleTheme(['animate-fadeOut', 'bg-red-300']);
+						this.themeSwitcher.toggleTheme(['light', 'animate-darkToLight', 'bg-gray-50']);
 
 						// observer.disconnect(); // disconnect if you want to stop observing else it will rerun every time its back in view. Just make sure you disconnect in ngOnDestroy instead
 					}

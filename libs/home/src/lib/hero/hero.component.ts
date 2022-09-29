@@ -13,14 +13,14 @@ export class HeroComponent implements OnInit, AfterViewInit {
 	yourElement!: ElementRef;
 
 	ngAfterViewInit() {
-		const threshold = 0.3; // how much % of the element is in view
+		const threshold = 0.6; // how much % of the element is in view
 		const observer = new IntersectionObserver(
 			(entries) => {
 				entries.forEach((entry) => {
 					if (entry.isIntersecting) {
 						// run your animation code here
 						console.log('hero in view');
-						this.themeSwitcher.toggleTheme(['animate-fadeIn', 'bg-blue-400']);
+						this.themeSwitcher.toggleTheme(['dark', 'animate-lightToDark', 'bg-gray-900']);
 						// observer.disconnect(); // disconnect if you want to stop observing else it will rerun every time its back in view. Just make sure you disconnect in ngOnDestroy instead
 					}
 				});

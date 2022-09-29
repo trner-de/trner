@@ -9,17 +9,17 @@ module.exports = {
   theme: {
     extend: {
       animation: {
-        fadeIn: 'fadeOut 1s ease-in-out',
-        fadeOut: 'fadeIn 1s ease-in-out',
+        lightToDark: 'lightToDark 2s ease-in-out',
+        darkToLight: 'darkToLight 2s ease-in-out',
       },
       keyframes: (theme) => ({
-        fadeOut: {
-          '0%': { backgroundColor: theme('colors.red.300') },
-          '100%': { backgroundColor: theme('colors.blue.400') },
+        lightToDark: {
+          '0%': { backgroundColor: theme('colors.gray.50') },
+          '100%': { backgroundColor: theme('colors.gray.900') },
         },
-        fadeIn: {
-          '0%': { backgroundColor: theme('colors.blue.400') },
-          '100%': { backgroundColor: theme('colors.red.300') },
+        darkToLight: {
+          '0%': { backgroundColor: theme('colors.gray.900') },
+          '100%': { backgroundColor: theme('colors.gray.50') },
         },
       }),
     },
