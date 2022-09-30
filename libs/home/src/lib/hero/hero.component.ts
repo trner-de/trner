@@ -1,6 +1,7 @@
 import { ThisReceiver } from '@angular/compiler';
 import { AfterViewInit, Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { ThemeSwitcherService } from '@trner/ui';
+import { gsap } from 'gsap';
 
 @Component({
 	selector: 'trner-hero',
@@ -9,8 +10,17 @@ import { ThemeSwitcherService } from '@trner/ui';
 })
 export class HeroComponent implements OnInit, AfterViewInit {
 
-	@ViewChild('heroElement')
-	yourElement!: ElementRef;
+	@ViewChild('heroSection')
+	heroSection!: ElementRef;
+
+	@ViewChild('headline')
+	headline!: HTMLElement;
+
+	@ViewChild('subline')
+	subline!: HTMLElement;
+
+	@ViewChild('sideBar')
+	sideBar!: HTMLElement;
 
 	ngAfterViewInit() {
 		const threshold = 0.6; // how much % of the element is in view
@@ -27,9 +37,24 @@ export class HeroComponent implements OnInit, AfterViewInit {
 			},
 			{ threshold }
 		);
-		observer.observe(this.yourElement.nativeElement);
+		observer.observe(this.heroSection.nativeElement);
 	}
-	constructor(private themeSwitcher: ThemeSwitcherService) { }
+	constructor(private themeSwitcher: ThemeSwitcherService, protected element: ElementRef) {
 
-	ngOnInit(): void { }
+
+	}
+
+	ngOnInit(): void {
+		this.headline = this.element.nativeElement.querySelector('.headline');
+		this.subline = this.element.nativeElement.querySelector('.subline');
+		this.sideBar = this.element.nativeElement.querySelector('.sidebar');
+		this.animateTimeline();
+	}
+
+	animateTimeline() {
+		const tl = gsap.timeline()
+			.from(this.headline, { duration: 1, y: 100, opacity: 0, ease: 'power4.out' })
+			.from(this.subline, { duration: 1, y: 100, opacity: 0, ease: 'power3.out' }, '-=0.5')
+			.from(this.sideBar, { duration: 2.5, yPercent: 100, opacity: 0, ease: 'expo.out' }, '-=0.5');
+	}
 }
