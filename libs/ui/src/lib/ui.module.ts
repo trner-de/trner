@@ -5,6 +5,7 @@ import { RouterModule } from '@angular/router';
 import { NavMennuListItemComponent } from './nav-mennu-list-item/nav-mennu-list-item.component';
 import { NavHamburgerComponent } from './nav-hamburger/nav-hamburger.component';
 import { LogoComponent } from './logo/logo.component';
+import { WorkWithUsComponent } from './work-with-us/work-with-us.component';
 
 @NgModule({
   imports: [CommonModule, RouterModule],
@@ -13,7 +14,8 @@ import { LogoComponent } from './logo/logo.component';
     NavMennuListItemComponent,
     NavHamburgerComponent,
     LogoComponent,
+    WorkWithUsComponent,
   ],
-  exports: [NavbarComponent],
+  exports: [NavbarComponent, WorkWithUsComponent],
 })
 export class UiModule {}

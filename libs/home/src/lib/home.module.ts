@@ -4,18 +4,19 @@ import { RouterModule } from '@angular/router';
 import { HeroComponent } from './hero/hero.component';
 import { HomePageComponent } from './home-page/home-page.component';
 import { NewComponent } from './new/new.component';
+import { UiModule } from '@trner/ui';
 
 @NgModule({
-  imports: [
-    CommonModule,
-
-    RouterModule.forChild([
-      {
-        path: '',
-        component: HomePageComponent,
-      },
-    ]),
-  ],
-  declarations: [HeroComponent, HomePageComponent, NewComponent],
+	imports: [
+		CommonModule,
+		UiModule,
+		RouterModule.forChild([
+			{
+				path: '',
+				component: HomePageComponent,
+			},
+		]),
+	],
+	declarations: [HeroComponent, HomePageComponent, NewComponent],
 })
-export class HomeModule {}
+export class HomeModule { }

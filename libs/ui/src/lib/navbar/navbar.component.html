@@ -1,4 +1,4 @@
-<nav>
+<nav class="snap-start">
   <div class="flex flex-wrap flex-row p-4">
     <!-- logo -->
     <div class="grow">
@@ -17,13 +17,14 @@
       [class.hidden]="isMenuExpanded === false"
     >
       <ul
-        class="flex flex-col p-4 mt-4 bg-gray-50 rounded-lg border border-gray-100 lg:flex-row lg:space-x-8 lg:mt-0 lg:text-sm lg:font-medium lg:border-0 lg:bg-white dark:bg-gray-800 lg:dark:bg-gray-900 dark:border-gray-700"
+        class="flex flex-col p-4 mt-4 rounded-lg border border-gray-100 lg:flex-row lg:space-x-8 lg:mt-0 lg:text-sm lg:font-medium lg:border-0 dark:border-gray-700"
       >
         <trner-nav-mennu-list-item
           (click)="isMenuExpanded = false"
           *ngFor="let navMenuItem of menuItems"
           [navMenuModel]="navMenuItem"
         ></trner-nav-mennu-list-item>
+        <trner-work-with-us></trner-work-with-us>
       </ul>
     </div>
   </div>

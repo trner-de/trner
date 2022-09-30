@@ -6,4 +6,10 @@
 html,
 body {
   @apply h-full;
+  scroll-snap-type: proximity;
+  scroll-snap-type: y proximity;
+}
+
+section {
+  height: 100vh;
 }
