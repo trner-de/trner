@@ -3,6 +3,7 @@ import { ThemeSwitcherService } from '@trner/ui';
 import { gsap, Back } from 'gsap';
 import { HeroComponent } from '../hero/hero.component';
 import { NewComponent } from '../new/new.component';
+
 @Component({
 	selector: 'trner-home-page',
 	templateUrl: './home-page.component.html',
@@ -92,10 +93,11 @@ export class HomePageComponent implements OnInit, AfterViewInit, OnDestroy {
 		gsap.timeline()
 			.from(this.headline, { duration: 1, y: 100, opacity: 0, ease: 'power4.out' })
 			.from(this.subline, { duration: 1, y: 100, opacity: 0, ease: 'power3.out' }, '-=0.5')
-			.from(this.ring1, { duration: 0.5, xPercent: -100, yPercent: 100, opacity: 0, ease: Back.easeOut.config(1) }, '-=1.5')
-			.from(this.ring2, { duration: 0.6, xPercent: -100, yPercent: 100, opacity: 0, ease: Back.easeOut.config(2) }, '-=1.5')
-			.from(this.ring3, { duration: 0.7, xPercent: -100, yPercent: 100, opacity: 0, ease: Back.easeOut.config(2) }, '-=1.5')
-			.from(this.ring4, { duration: 0.8, xPercent: -100, yPercent: 100, opacity: 0, ease: Back.easeOut.config(2) }, '-=1.5')
-			.from(this.sideBar, { duration: 1, xPercent: -100, opacity: 0, ease: 'power3.out' }, '-=1.5');
+			.from(this.ring1, { duration: 0.5, xPercent: -100, yPercent: 100, opacity: 0, ease: 'power1.in' }, '-=1.5')
+			.from(this.ring2, { duration: 0.6, xPercent: -100, yPercent: 100, opacity: 0, ease: 'power1.in' }, '-=1.5')
+			.from(this.ring3, { duration: 0.7, xPercent: -100, yPercent: 100, opacity: 0, ease: 'power1.in' }, '-=1.5')
+			.from(this.ring4, { duration: 0.8, xPercent: -100, yPercent: 100, opacity: 0, ease: 'power1.in' }, '-=1.5')
+			.from(this.sideBar, { duration: 1, xPercent: -100, opacity: 0, ease: 'power3.out' }, '-=1.5')
+
 	}
 }
