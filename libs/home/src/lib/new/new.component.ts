@@ -1,4 +1,4 @@
-import { AfterViewInit, Component, ElementRef, OnInit, ViewChild } from '@angular/core';
+import { AfterViewInit, Component, ElementRef, OnDestroy, ViewChild } from '@angular/core';
 import { ThemeSwitcherService } from '@trner/ui';
 
 @Component({
@@ -6,19 +6,20 @@ import { ThemeSwitcherService } from '@trner/ui';
 	templateUrl: './new.component.html',
 	styleUrls: ['./new.component.scss'],
 })
-export class NewComponent implements OnInit, AfterViewInit {
+export class NewComponent implements AfterViewInit, OnDestroy {
 
 	@ViewChild('newElement')
 	yourElement!: ElementRef;
 
+	observer!: IntersectionObserver;
+
 	ngAfterViewInit() {
 		const threshold = 0.3; // how much % of the element is in view
-		const observer = new IntersectionObserver(
+		this.observer = new IntersectionObserver(
 			(entries) => {
 				entries.forEach((entry) => {
 					if (entry.isIntersecting) {
-						// run your animation code here
-						console.log('new in view');
+						// animation code
 						this.themeSwitcher.toggleTheme(['light', 'animate-darkToLight', 'bg-gray-50']);
 
 						// observer.disconnect(); // disconnect if you want to stop observing else it will rerun every time its back in view. Just make sure you disconnect in ngOnDestroy instead
@@ -27,9 +28,14 @@ export class NewComponent implements OnInit, AfterViewInit {
 			},
 			{ threshold }
 		);
-		observer.observe(this.yourElement.nativeElement);
+		this.observer.observe(this.yourElement.nativeElement);
 	}
-	ngOnInit(): void { }
+
+	ngOnDestroy() {
+		// disconnect observer here
+
+		this.observer?.disconnect();
+	}
 
 	constructor(private themeSwitcher: ThemeSwitcherService) { }
 }
