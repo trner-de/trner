@@ -107,7 +107,6 @@ export class HomePageComponent implements OnInit, AfterViewInit, OnDestroy {
 		this.newSolution = this.newComponent.newSection.nativeElement.querySelector('.new-solution');
 		this.newLogo = this.newComponent.newSection.nativeElement.querySelector('.new-logo');
 
-		console.log(this.newImage);
 		this.animateTimeline();
 		this.animateNew();
 
@@ -131,9 +130,10 @@ export class HomePageComponent implements OnInit, AfterViewInit, OnDestroy {
 			opacity: 0,
 			scrollTrigger: {
 
+				markers: true,
 				trigger: this.newImage,
-				start: 'top 80%',
-				end: 'bottom 80%',
+				start: 'top 70%',
+				end: 'bottom 70%',
 				toggleActions: 'play none none reverse',
 			},
 		})
@@ -167,8 +167,8 @@ export class HomePageComponent implements OnInit, AfterViewInit, OnDestroy {
 			stagger: 0.2,
 			scrollTrigger: {
 				trigger: this.newLogo,
-				start: 'top 80%',
-				end: 'bottom 80%',
+				start: 'top 70%',
+				end: 'bottom 70%',
 				toggleActions: 'play none none reverse',
 			},
 		})
