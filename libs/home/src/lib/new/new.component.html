@@ -1,4 +1,45 @@
-<section class="" #newSection>
-  <div class="absolute right-8 hidden h-1/5 w-20 bg-red-500 lg:block"></div>
-  <p class="h-screen dark:text-white">new works!</p>
+<section class="relative z-50 md:p-8" #newSection>
+  <div class="flex flex-row">
+    <img
+      class="desk-image -ml-16 mt-36 hidden h-96 md:block md:w-1/2"
+      src="assets/pexels-andrew-neel-2312369.jpg"
+      alt=""
+    />
+    <div
+      class="new-text right-0 h-96 rounded bg-gray-900 p-8 text-white dark:bg-slate-50 dark:text-black md:ml-8 lg:ml-16 lg:w-1/2"
+    >
+      <h2>Wir machen neu</h2>
+      <trner-divider></trner-divider>
+      <div>
+        Geboren aus einer Leidenschaft für Design, konzipieren, gestalten und
+        kreieren wir Apps, Websites und Marken von einer Idee bis zu einem
+        einzigartigen Erlebnis.
+      </div>
+
+      <div class="pt-5">
+        Von kleinen Start-ups bis hin zu Branchenikonen schaffen wir, für Kunden
+        auf der ganzen Welt, sinnvolle Erfahrungen zu bieten.
+      </div>
+    </div>
+  </div>
+
+  <div class="flex flex-row md:mt-32">
+    <div
+      class="new-solution -ml-16 hidden h-96 rounded bg-gray-900 p-16 text-white dark:bg-slate-50 dark:text-black md:block md:w-1/2"
+    >
+      <trner-logo></trner-logo>
+      <trner-divider></trner-divider>
+      <div>
+        Von kleinen, ehrgeizigen Start-ups bis hin zu Branchenikonen bemühen wir
+        uns, sinnvolle Erfahrungen für Kunden auf der ganzen Welt zu schaffen.
+      </div>
+    </div>
+    <div
+      class="new-logo h-96 pl-32 md:flex md:w-1/2 md:flex-col md:justify-between"
+    >
+      <trner-logo class="lg:block"></trner-logo>
+      <trner-logo class="lg:ml-12 lg:block"></trner-logo>
+      <trner-logo class="lg:block"></trner-logo>
+    </div>
+  </div>
 </section>

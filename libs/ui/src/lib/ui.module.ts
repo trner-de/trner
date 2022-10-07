@@ -6,6 +6,7 @@ import { NavMennuListItemComponent } from './nav-mennu-list-item/nav-mennu-list-
 import { NavHamburgerComponent } from './nav-hamburger/nav-hamburger.component';
 import { LogoComponent } from './logo/logo.component';
 import { WorkWithUsComponent } from './work-with-us/work-with-us.component';
+import { DividerComponent } from './divider/divider.component';
 
 @NgModule({
   imports: [CommonModule, RouterModule],
@@ -15,7 +16,13 @@ import { WorkWithUsComponent } from './work-with-us/work-with-us.component';
     NavHamburgerComponent,
     LogoComponent,
     WorkWithUsComponent,
+    DividerComponent,
   ],
-  exports: [NavbarComponent, WorkWithUsComponent],
+  exports: [
+    NavbarComponent,
+    WorkWithUsComponent,
+    LogoComponent,
+    DividerComponent,
+  ],
 })
 export class UiModule {}

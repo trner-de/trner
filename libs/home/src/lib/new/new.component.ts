@@ -9,6 +9,7 @@ export class NewComponent {
 
 	@ViewChild('newSection')
 	newSection!: ElementRef;
+
 }
 
 
