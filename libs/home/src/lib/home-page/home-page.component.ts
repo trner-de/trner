@@ -124,54 +124,56 @@ export class HomePageComponent implements OnInit, AfterViewInit, OnDestroy {
 	}
 
 	animateNew() {
-		gsap.from(this.newImage, {
-			xPercent: -100,
-			duration: 1,
-			opacity: 0,
-			scrollTrigger: {
+		// get media query in gsap
+		const mm = gsap.matchMedia(document.body)
+		mm.add("(min-width:1024px)", () => {
+			gsap.from(this.newText, {
+				xPercent: -50,
+				duration: 0.8,
+				scrollTrigger: {
+					trigger: this.newText,
+					start: 'top 60%',
+					end: 'bottom 60%',
+					toggleActions: 'play none none reverse',
+				},
+			})
 
-				markers: true,
-				trigger: this.newImage,
-				start: 'top 70%',
-				end: 'bottom 70%',
-				toggleActions: 'play none none reverse',
-			},
+			gsap.from(this.newImage, {
+				xPercent: -100,
+				duration: 0.8,
+				scrollTrigger: {
+					trigger: this.newImage,
+					start: 'top 60%',
+					end: 'bottom 60%',
+					toggleActions: 'play none none reverse',
+				},
+			})
+
+
+			gsap.from(this.newSolution, {
+				xPercent: -100,
+				duration: 0.8,
+				scrollTrigger: {
+					trigger: this.newSolution,
+					start: 'top 70%',
+					end: 'bottom 70%',
+					toggleActions: 'play none none reverse',
+				},
+			})
+
+			gsap.from(this.newLogo.children, {
+				opacity: 0,
+				xPercent: -100,
+				duration: 0.8,
+				stagger: 0.2,
+				scrollTrigger: {
+					trigger: this.newLogo,
+					start: 'top 70%',
+					end: 'bottom 70%',
+					toggleActions: 'play none none reverse',
+				},
+			})
 		})
-
-		gsap.from(this.newText, {
-			xPercent: -50,
-			duration: 0.8,
-			scrollTrigger: {
-				trigger: this.newText,
-				start: 'top 60%',
-				end: 'bottom 60%',
-				toggleActions: 'play none none reverse',
-			},
-		})
-
-		gsap.from(this.newSolution, {
-			xPercent: -100,
-			duration: 0.8,
-			scrollTrigger: {
-				trigger: this.newSolution,
-				start: 'top 70%',
-				end: 'bottom 70%',
-				toggleActions: 'play none none reverse',
-			},
-		})
-
-		gsap.from(this.newLogo.children, {
-			opacity: 0,
-			xPercent: -100,
-			duration: 0.8,
-			stagger: 0.2,
-			scrollTrigger: {
-				trigger: this.newLogo,
-				start: 'top 70%',
-				end: 'bottom 70%',
-				toggleActions: 'play none none reverse',
-			},
-		})
-
 	}
 }
+
