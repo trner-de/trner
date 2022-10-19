@@ -1,15 +1,18 @@
-<section class="relative z-50 md:p-8" #newSection>
-  <div class="flex flex-row">
-    <img
-      class="desk-image -ml-16 mt-36 hidden h-96 md:block md:w-1/2"
-      src="assets/pexels-andrew-neel-2312369.jpg"
-      alt=""
-    />
+<section #newSection>
+  <div class="m-5 md:row-span-2 md:grid md:grid-cols-2 md:gap-4">
+    <div class="hidden md:row-span-2 md:block">
+      <img
+        src="assets/pexels-cottonbro-5473957.jpg"
+        alt="image"
+        class="h-full w-full object-cover"
+      />
+    </div>
     <div
-      class="new-text h-96 rounded bg-gray-900 p-8 text-white dark:bg-slate-50 dark:text-black md:ml-8 lg:ml-16 lg:w-1/2"
+      class="new-text rounded bg-gray-900 p-8 text-white hover:bg-white hover:text-black dark:bg-slate-50 dark:text-black"
     >
-      <h2>Wir machen neu</h2>
+      <trner-logo></trner-logo>
       <trner-divider></trner-divider>
+
       <div>
         Geboren aus einer Leidenschaft für Design, konzipieren, gestalten und
         kreieren wir Apps, Websites und Marken von einer Idee bis zu einem
@@ -17,35 +20,22 @@
       </div>
 
       <div class="pt-5">
-        Von kleinen Start-ups bis hin zu Branchenikonen schaffen wir, für Kunden
-        auf der ganzen Welt, sinnvolle Erfahrungen zu bieten.
+        Von kleinen Start-ups bis hin zu Branchenikonen schaffen wir es, für
+        Kunden auf der ganzen Welt, sinnvolle Erfahrungen zu bieten.
       </div>
     </div>
-  </div>
-
-  <div class="flex flex-row md:mt-32">
     <div
-      class="new-solution -ml-16 h-96 rounded bg-gray-900 p-8 pl-24 text-white dark:bg-slate-50 dark:text-black md:block md:w-1/2"
+      class="new-solution mt-5 rounded bg-gray-900 p-8 text-white hover:bg-white hover:text-black dark:bg-slate-50 dark:text-black"
     >
       <trner-logo></trner-logo>
       <trner-divider></trner-divider>
-      <div>
-        Von kleinen, ehrgeizigen Start-ups bis hin zu Branchenikonen bemühen wir
-        uns, sinnvolle Erfahrungen für Kunden auf der ganzen Welt zu schaffen.
-      </div>
+
       <div class="pt-5">
         Durch die Herstellung funktioneller Produkte, großartiger Designs die
         Anklang finden, helfen wir großen, bedeutenden Unternehmen, Hürden zu
         überwinden, kleinen Unternehmen zu wachsen und finanzierten Start-ups,
         ihre Chancen zu nutzen.
       </div>
-    </div>
-    <div
-      class="new-logo hidden h-96 pl-32 md:flex md:w-1/2 md:flex-col md:justify-between"
-    >
-      <trner-logo class="lg:block"></trner-logo>
-      <trner-logo class="lg:ml-12 lg:block"></trner-logo>
-      <trner-logo class="lg:block"></trner-logo>
     </div>
   </div>
 </section>

@@ -4,6 +4,7 @@ import { RouterModule } from '@angular/router';
 import { HeroComponent } from './hero/hero.component';
 import { HomePageComponent } from './home-page/home-page.component';
 import { NewComponent } from './new/new.component';
+import { PortfolioComponent } from './portfolio/portfolio.component';
 import { UiModule } from '@trner/ui';
 
 @NgModule({
@@ -17,6 +18,11 @@ import { UiModule } from '@trner/ui';
 			},
 		]),
 	],
-	declarations: [HeroComponent, HomePageComponent, NewComponent],
+	declarations: [
+		HeroComponent,
+		HomePageComponent,
+		NewComponent,
+		PortfolioComponent,
+	],
 })
 export class HomeModule { }

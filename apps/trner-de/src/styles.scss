@@ -7,3 +7,7 @@ html,
 body {
   @apply h-full;
 }
+
+section {
+  min-height: 100vh;
+}
